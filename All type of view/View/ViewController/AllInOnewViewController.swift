@@ -12,6 +12,10 @@ class AllInOnewViewController: UIViewController {
     var firstName: String = ""
     var lastName: String = ""
     
+    let progress = Progress(totalUnitCount: 10)
+    
+    @IBOutlet weak var aboutTextView: UITextView!
+    
     @IBOutlet weak var topWithTitleView: UIView!
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
@@ -25,6 +29,18 @@ class AllInOnewViewController: UIViewController {
     @IBOutlet weak var onAndOffSwitch: UISwitch!
     
     @IBOutlet weak var genderSegmentedControl: UISegmentedControl!
+    
+    @IBOutlet weak var markSlider: UISlider!
+    @IBOutlet weak var markLabel: UILabel!
+    
+    @IBOutlet weak var numberStepper: UIStepper!
+    @IBOutlet weak var numberLabel: UILabel!
+    
+    @IBOutlet weak var workDoneProgressView: UIProgressView!
+    @IBOutlet weak var startProgressButton: UIButton!
+    @IBOutlet weak var progressLabel: UILabel!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +56,19 @@ class AllInOnewViewController: UIViewController {
         fullNameLabel.text = ""
         genderLabel.text = ""
         onAndOffLabel.text = ""
+        markLabel.text = "50"
         
+        // Stepper
+        numberStepper.wraps = true
+        numberStepper.autorepeat = true
+        numberStepper.maximumValue = 100
+        numberLabel.text = "0"
         
+        // TextView
+        
+        aboutTextView.text = """
+UITextView supports the display of text using custom style information and also supports text editing. You typically use a text view to display multiple lines of text, such as when displaying the body of a large text document.
+"""
     }
     
     // MARK: - function of Modify
@@ -56,6 +83,11 @@ class AllInOnewViewController: UIViewController {
         fullNameUIButton.dropShadow()
         
         basicImageView.dropShadow()
+        
+        startProgressButton.dropShadow()
+        
+        aboutTextView.layer.cornerRadius = 5
+        aboutTextView.dropShadow()
         
     }
     
@@ -78,6 +110,7 @@ class AllInOnewViewController: UIViewController {
         
     }
     
+    // UISegmentedControl IBAction
     @IBAction func genderSegmentedAction(_ sender: UISegmentedControl) {
         switch genderSegmentedControl.selectedSegmentIndex
         {
@@ -90,7 +123,36 @@ class AllInOnewViewController: UIViewController {
         }
     }
     
- 
+    // UISlider IBAction
+    @IBAction func markSliderAction(_ sender: UISlider) {
+        let currentValue = Int(sender.value)
+        
+        markLabel.text = "\(currentValue)"
+    }
+    
+    //UIStepper IBAction
+    @IBAction func numberStepperAction(_ sender: UIStepper) {
+        numberLabel.text = Int(sender.value).description
+    }
+    
+    @IBAction func startProgressButtonAction(_ sender: UIButton) {
+        workDoneProgressView.progress = 0.0
+        progress.completedUnitCount = 0
+        
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
+            guard self.progress.isFinished == false else {
+                timer.invalidate()
+                return
+            }
+            
+            self.progress.completedUnitCount += 1
+            self.workDoneProgressView.setProgress(Float(self.progress.fractionCompleted), animated: true)
+            
+            self.progressLabel.text = "\(Int(self.progress.fractionCompleted * 100)) %"
+        }
+    }
+    
+    
 }
 
 extension UIView {
