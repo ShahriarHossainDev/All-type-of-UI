@@ -8,13 +8,14 @@
 import UIKit
 
 class DemoCollectionViewCell: UICollectionViewCell {
-
+    
     @IBOutlet private var thumbnailImageView: UIImageView!
     
     override func prepareForReuse() {
         super.prepareForReuse()
         thumbnailImageView.image = nil
-        thumbnailImageView.layer.cornerRadius = 2
+        
+        thumbnailImageView.dropShadow()
     }
     
     // MARK: Cell Configuration

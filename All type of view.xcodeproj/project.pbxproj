@@ -35,6 +35,7 @@
 		FACC1EE029ADFF8A0007E645 /* ham_and_cheese_panini.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FACC1ED029ADFF8A0007E645 /* ham_and_cheese_panini.jpg */; };
 		FACC1EE129ADFF8A0007E645 /* noodle_with_bbq_pork.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FACC1ED129ADFF8A0007E645 /* noodle_with_bbq_pork.jpg */; };
 		FACC1EE329AE00E40007E645 /* DemoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACC1EE229AE00E40007E645 /* DemoCollectionViewCell.swift */; };
+		FACC1EE529AE08160007E645 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACC1EE429AE08160007E645 /* PickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		FACC1ED029ADFF8A0007E645 /* ham_and_cheese_panini.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ham_and_cheese_panini.jpg; sourceTree = "<group>"; };
 		FACC1ED129ADFF8A0007E645 /* noodle_with_bbq_pork.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = noodle_with_bbq_pork.jpg; sourceTree = "<group>"; };
 		FACC1EE229AE00E40007E645 /* DemoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoCollectionViewCell.swift; sourceTree = "<group>"; };
+		FACC1EE429AE08160007E645 /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +102,9 @@
 		FA084C3E29ADB655001B1E16 /* All type of view */ = {
 			isa = PBXGroup;
 			children = (
-				FACC1EC129ADFF8A0007E645 /* Images */,
 				FACC1EBE29ADFF570007E645 /* Model */,
 				FA084C5329ADB724001B1E16 /* View */,
+				FACC1EC129ADFF8A0007E645 /* Images */,
 				FA084C3F29ADB655001B1E16 /* AppDelegate.swift */,
 				FA084C4129ADB655001B1E16 /* SceneDelegate.swift */,
 				FA084C4529ADB655001B1E16 /* Main.storyboard */,
@@ -129,6 +131,7 @@
 				FA084C5629ADBA81001B1E16 /* AllInOnewViewController.swift */,
 				FACC1EB729ADFA470007E645 /* DemoCollectionViewController.swift */,
 				FACC1EBC29ADFF0B0007E645 /* DemoTableViewController.swift */,
+				FACC1EE429AE08160007E645 /* PickerViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FACC1EE529AE08160007E645 /* PickerViewController.swift in Sources */,
 				FA084C5729ADBA81001B1E16 /* AllInOnewViewController.swift in Sources */,
 				FACC1EE329AE00E40007E645 /* DemoCollectionViewCell.swift in Sources */,
 				FA084C4029ADB655001B1E16 /* AppDelegate.swift in Sources */,

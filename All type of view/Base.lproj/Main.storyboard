@@ -321,6 +321,61 @@
             </objects>
             <point key="canvasLocation" x="685.50724637681162" y="233.70535714285714"/>
         </scene>
+        <!--Picker-->
+        <scene sceneID="3TL-KW-bYv">
+            <objects>
+                <viewController id="nyn-jQ-Fkz" customClass="PickerViewController" customModule="All_type_of_view" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NKU-rj-N1i">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mTx-ib-ami">
+                                <rect key="frame" x="94.5" y="64" width="225" height="104"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UIDatePicker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9s3-BP-x8g">
+                                        <rect key="frame" x="67.5" y="0.0" width="90.5" height="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="FnH-eI-62G">
+                                        <rect key="frame" x="0.0" y="27" width="225" height="50"/>
+                                        <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
+                                            <!--1970-01-01 11:00:00 +0000-->
+                                        </date>
+                                        <date key="maximumDate" timeIntervalSinceReferenceDate="1167562800">
+                                            <!--2037-12-31 11:00:00 +0000-->
+                                        </date>
+                                        <connections>
+                                            <action selector="todayDatePickerAction:" destination="nyn-jQ-Fkz" eventType="valueChanged" id="9Ks-u0-qAj"/>
+                                        </connections>
+                                    </datePicker>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UIDatePicker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDW-6k-P3b">
+                                        <rect key="frame" x="67.5" y="87" width="90.5" height="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6QW-vp-gBm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mTx-ib-ami" firstAttribute="top" secondItem="6QW-vp-gBm" secondAttribute="top" constant="20" id="Cya-fl-eiM"/>
+                            <constraint firstItem="mTx-ib-ami" firstAttribute="centerX" secondItem="NKU-rj-N1i" secondAttribute="centerX" id="OWf-Jd-QfU"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Picker" image="filemenu.and.selection" catalog="system" id="1Vx-e2-mDR"/>
+                    <connections>
+                        <outlet property="todayDatePicker" destination="FnH-eI-62G" id="iYc-v0-jCD"/>
+                        <outlet property="todayLabel" destination="QDW-6k-P3b" id="Wco-FX-njR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A4Q-Hd-4R7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1230.4347826086957" y="-552.45535714285711"/>
+        </scene>
         <!--UICollectionViewController-->
         <scene sceneID="pOg-ce-JYg">
             <objects>
@@ -337,25 +392,26 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="demoCell" id="F6P-Fz-m9j" customClass="DemoCollectionViewCell" customModule="All_type_of_view" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                <rect key="frame" x="0.0" y="0.0" width="116" height="116"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="k3C-Gf-iC6">
-                                    <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="116" height="116"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6pS-8E-HhZ">
-                                            <rect key="frame" x="10" y="10" width="100" height="100"/>
+                                            <rect key="frame" x="8" y="8" width="100" height="100"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="100" id="7NB-ig-wqK"/>
-                                                <constraint firstAttribute="height" constant="100" id="eAz-Nx-ro7"/>
+                                                <constraint firstAttribute="width" constant="100" id="7MH-ee-B4X"/>
+                                                <constraint firstAttribute="width" secondItem="6pS-8E-HhZ" secondAttribute="height" multiplier="1:1" id="I9G-Wr-8RO"/>
+                                                <constraint firstAttribute="height" constant="100" id="mqs-sE-ZSg"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="6pS-8E-HhZ" firstAttribute="top" secondItem="k3C-Gf-iC6" secondAttribute="top" constant="10" id="AdX-y3-08r"/>
-                                        <constraint firstAttribute="bottom" secondItem="6pS-8E-HhZ" secondAttribute="bottom" constant="10" id="JE0-QO-mPn"/>
-                                        <constraint firstItem="6pS-8E-HhZ" firstAttribute="leading" secondItem="k3C-Gf-iC6" secondAttribute="leading" constant="10" id="fSq-oj-1cH"/>
-                                        <constraint firstAttribute="trailing" secondItem="6pS-8E-HhZ" secondAttribute="trailing" constant="10" id="s8B-fs-iSA"/>
+                                        <constraint firstItem="6pS-8E-HhZ" firstAttribute="top" secondItem="k3C-Gf-iC6" secondAttribute="top" constant="8" id="BSO-MK-9Zo"/>
+                                        <constraint firstAttribute="trailing" secondItem="6pS-8E-HhZ" secondAttribute="trailing" constant="8" id="Iqt-hR-QZX"/>
+                                        <constraint firstItem="6pS-8E-HhZ" firstAttribute="leading" secondItem="k3C-Gf-iC6" secondAttribute="leading" constant="8" id="NT9-H1-paf"/>
+                                        <constraint firstAttribute="bottom" secondItem="6pS-8E-HhZ" secondAttribute="bottom" constant="8" id="osn-NF-kj0"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <connections>
@@ -387,6 +443,7 @@
                         <segue destination="dgw-lJ-tlR" kind="relationship" relationship="viewControllers" id="teB-qK-x8L"/>
                         <segue destination="QyY-MR-SnE" kind="relationship" relationship="viewControllers" id="c5p-J6-VDD"/>
                         <segue destination="BvX-dI-b0Y" kind="relationship" relationship="viewControllers" id="2sf-3S-Zsc"/>
+                        <segue destination="nyn-jQ-Fkz" kind="relationship" relationship="viewControllers" id="leg-Lf-Vvr"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Et4-JI-ytp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -465,6 +522,7 @@
     </scenes>
     <resources>
         <image name="Universe" width="600" height="400"/>
+        <image name="filemenu.and.selection" catalog="system" width="128" height="93"/>
         <image name="folder" catalog="system" width="128" height="97"/>
         <image name="photo.on.rectangle.angled" catalog="system" width="128" height="100"/>
         <image name="tablecells.badge.ellipsis" catalog="system" width="128" height="92"/>
